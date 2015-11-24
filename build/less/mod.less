@@ -1,0 +1,217 @@
+//== variables.less
+@body-bg: transparent;
+// Container sizes
+@container-tablet: 85%;
+@container-desktop: 80%;
+@container-large-desktop: 65%;
+// Basics of a navbar
+@navbar-height: 48px;
+@navbar-width: 952px;
+@navbar-width-small: 748px;
+@navbar-border-radius: 0;
+// Navbar links
+@navbar-default-link-color: #fff;
+@navbar-default-link-hover-color: #fff;
+@navbar-default-link-active-bg: transparent;
+// Navs
+@nav-link-hover-bg: transparent;
+@nav-link-hover-color: rgba(255,255,255,0.9);
+@nav-link-color: rgba(255,255,255,0.7);
+@nav-link-font: "Lucida Grande","Lucida Sans Unicode",Geneva,sans-serif;
+@nav-link-font-size: 0.9em;
+@nav-link-active-link-bg: transparent;
+@jumbotron-bg: transparent;
+@jumbotron-color: white;
+
+@padding-xlarge-horizontal:  45px;
+
+//== navbar.less
+.navbar {
+	border:1px solid transparent;
+	max-width: @navbar-width;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.navbar-brand {
+	color:@nav-link-color;
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-weight: 900;
+	font-size:1.5em;
+	&:hover,
+	&:focus {
+		color:@nav-link-hover-color;
+	}
+}
+
+//== navs.less
+.nav {
+	> li {
+		> a {
+			color:@nav-link-color;
+			font-family: @nav-link-font;
+			font-size: @nav-link-font-size;
+		&:hover,
+		&:focus {
+			color:@nav-link-hover-color;
+		}
+		}
+	}
+}
+
+.nav.dark > li > a, .navbar-brand.dark {
+	color: rgba(0,0,0,0.7);
+}
+
+.navbar.dark {
+	border-bottom:solid rgba(0,0,0,.07) 1px;
+	background:rgba(255, 255, 255, 0.5);
+}
+
+
+// Other shitty CSS
+html{margin:0;height:100%}
+.footer a{background:white;padding:2px}
+.footer a:hover{background:lightgrey}
+body {
+	color: white;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+background-color:auto;
+}
+
+.body {
+	background: rgba(255,255,255,0.1);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	margin-bottom:15px;
+}
+
+.jumbotron{
+	text-align: center; 
+	
+}
+
+.navbar {
+	border-bottom: solid rgba(255,255,255,0.07) 1px;
+}
+
+.body {
+	padding:15px;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing{
+	width:60%;
+	display:  block;
+}
+.marketing h2 {
+	font-weight: normal;
+}
+.marketing .col-md-6 p {
+	margin-left: 10px;
+	margin-right: 10px;
+	color: rgba(255, 255, 255, 0.5) white;
+}
+
+.marketing .col-md-6 p > a{
+	background:white;
+	padding: 2px;
+}
+
+.marketing .col-md-6 p > a:hover{
+	background:lightgrey;
+}
+
+.marketing .col-md-6 h4{
+	color:white;
+	white-space: nowrap;
+	word-wrap:normal;
+	overflow:hidden !important;
+	text-overflow: ellipsis;
+}
+
+
+@media (max-width: 979px) {
+	.navbar-inner {
+		margin: -20px;
+	}
+
+	.lead{
+		display: none;
+	}
+	.marketing .col-md-6 p{
+		display: none;
+	}
+	.marketing .col-md-6{
+		max-width: 200%;
+	}
+	.jumbotron{
+		margin-top:25px;
+	}
+	.marketing .col-md-6 h4{
+		background: rgba(255, 225, 225, 0.2);
+		padding:5px;
+	}
+}
+
+.posts{
+	padding:1.5rem;
+  box-shadow:0 1px 2px #aaa;
+  background:white;
+  margin:0 1rem 1rem;
+  border-radius:3px;
+}
+.posts:after {
+  position:absolute;
+  font-size:.9rem;
+  top:1.5rem;
+  right:1rem;
+  border:thin solid gray;
+  color:gray;
+  width:1rem;
+  line-height:1rem;
+  text-align:center;
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.glyphicon {
+	top: 2.5px;
+}
+
+.btn-lng {
+  .button-size(@padding-large-vertical; @padding-xlarge-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+}
+
+p.paragraph{
+	text-align:left;
+	text-indent:2em;
+}
+
+// Responsive Mixin
+
+.btn-lng {
+  @media (max-width: @screen-xs-max) {
+    .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+  }
+}
+
+.stock {
+	background: #eee;
+	padding: 15px;
+	border-bottom:1px solid grey;
+	min-height: 145px;
+}
+
+.stock a, .stock p {
+	color:black;
+}
+
+.disabled a, .disabled p, .disabled b{
+	color:grey !important;
+}
